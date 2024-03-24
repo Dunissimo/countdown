@@ -1,5 +1,12 @@
 # Frontend Mentor - Launch countdown timer
 
+## Get it
+
+1. Clone this repo
+2. ```npm install```
+3. ```npm run dev```
+4. Open in browser
+
 ![Design preview for the Launch countdown timer coding challenge](./src/images/desktop-design.jpg)
 
 ## Welcome! 👋
