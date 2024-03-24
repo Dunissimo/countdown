@@ -1,15 +1,16 @@
 import 'normalize.css';
 import './style.css';
 
-const DATA = new Date(2024, 2, 28);
+let DATE = new Date(2024, 2, 28);
 
 const timer = document.querySelector('.timer');
-const timerAnimatedParent = timer?.querySelectorAll('.timer__item');
 const timerAnimated = timer?.querySelectorAll('.timer__item .top .anim');
 const days = timer?.querySelectorAll('.days .count');
 const hours = timer?.querySelectorAll('.hours .count');
 const minutes = timer?.querySelectorAll('.minutes .count');
 const seconds = timer?.querySelectorAll('.seconds .count');
+
+const change = document.querySelector('.change-date');
 
 setInterval(() => {
   if (!days || !hours || !minutes || !seconds || !timerAnimated) return;
@@ -37,7 +38,7 @@ interface ITime {
 }
 
 const getTime = (): ITime => {
-  const difference = Number(DATA) - Number(new Date());
+  const difference = Number(DATE) - Number(new Date());
   let days = 0;
   let hours = 0;
   let minutes = 0;
@@ -65,3 +66,21 @@ const getTime = (): ITime => {
     remainingSeconds: seconds < 10 ? `0${seconds}` : String(seconds)
   }
 }
+
+change?.addEventListener('click', (e) => {
+  e.preventDefault();
+  
+  let res = prompt('New date (YYYY-MM-DD)', '2024-03-28');
+  const splitted = res?.split('-');
+  console.log(splitted);
+  
+  if (!res || !splitted || splitted.length < 1 || splitted.filter(item => item).length < 1) return;
+
+  const newDate = new Date(+splitted[0], +splitted[1] - 1, +splitted[2]);
+
+  if (+DATE - +newDate > 0) {
+    alert('Wrong date')
+  } else {
+    DATE = newDate;
+  }
+})

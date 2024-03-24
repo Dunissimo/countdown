@@ -251,6 +251,26 @@ body::before {
   color: grey;
 }
 
+.change-date {
+  padding: 7px 14px;
+
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 500;
+  background: #35354F;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: .3s ease;
+}
+.change-date:hover {
+  filter: brightness(80%);
+}
+
 @media (max-width: 900px) {
   .timer {
     display: none;
