@@ -210,6 +210,7 @@ body::before {
 
   background-image: url('/src/images/pattern-hills.svg');
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .attribution {
