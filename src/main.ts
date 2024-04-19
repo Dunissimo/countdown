@@ -1,7 +1,7 @@
 import 'normalize.css';
 import './style.css';
 
-let DATE = new Date(2024, 2, 28);
+let DATE = new Date(2025, 2, 28);
 
 const timer = document.querySelector('.timer');
 const timerAnimated = timer?.querySelectorAll('.timer__item .top .anim');
