@@ -72,13 +72,12 @@ change?.addEventListener('click', (e) => {
   
   let res = prompt('New date (YYYY-MM-DD)', '2024-03-28');
   const splitted = res?.split('-');
-  console.log(splitted);
   
   if (!res || !splitted || splitted.length < 1 || splitted.filter(item => item).length < 1) return;
 
   const newDate = new Date(+splitted[0], +splitted[1] - 1, +splitted[2]);
 
-  if (+DATE - +newDate > 0) {
+  if (+Date.now() - +newDate > 0) {
     alert('Wrong date')
   } else {
     DATE = newDate;
